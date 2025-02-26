@@ -1,0 +1,194 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  height: 100vh;
+  overflow: hidden;
+  background: radial-gradient(circle, rgb(0, 0, 0), rgb(155, 6, 6));
+  background-size: 300% 300%;
+  animation: pulseAnimation 5s ease-in-out infinite;
+  z-index: 10;
+}
+
+canvas {
+  border: 2px solid black;
+}
+
+img {
+  transition: transform 0.2s ease-in-out;
+  outline: none;
+}
+
+img:hover {
+  transform: scale(1.2);
+  cursor: pointer;
+}
+
+@keyframes pulseAnimation {
+  0% {
+    background-size: 300% 300%;
+    background-position: 50% 50%;
+  }
+  50% {
+    background-size: 600% 600%;
+    background-position: 50% 50%;
+  }
+  100% {
+    background-size: 300% 300%;
+    background-position: 50% 50%;
+  }
+}
+
+#sliderContainer {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  background-color: rgba(0, 0, 0, 0);
+  padding: 10px;
+  color: white;
+  border-radius: 5px;
+  z-index: 1;
+}
+
+#speedSlider {
+  width: 50px;
+}
+
+#gradientSpeedSliderContainer {
+  position: fixed;
+  bottom: 80px;
+  left: 20px;
+  background-color: rgba(0, 0, 0, 0);
+  padding: 10px;
+  color: white;
+  border-radius: 5px;
+  z-index: 1;
+}
+
+#gradientSpeedSlider {
+  width: 50px;
+}
+
+#toggleButton {
+  position: fixed;
+  bottom: 140px;
+  left: 20px;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  font-size: 20px;
+  cursor: pointer;
+  z-index: 2;
+  box-shadow: none;
+  transition: box-shadow 0.3s ease-in-out;
+}
+
+#toggleButton:focus {
+  outline: none;
+}
+
+#toggleButton.active {
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.7);
+}
+
+/* Media Queries */
+
+/* Phone: 320px to 480px */
+@media (max-width: 480px) {
+  #sliderContainer {
+    bottom: 10px;
+    left: 10px;
+  }
+
+  #gradientSpeedSliderContainer {
+    bottom: 60px;
+    left: 10px;
+  }
+
+  #toggleButton {
+    bottom: 110px;
+    left: 10px;
+    font-size: 18px;
+    padding: 8px 12px;
+  }
+
+  #speedSlider,
+  #gradientSpeedSlider {
+    width: 40px;
+  }
+}
+
+@media (max-width: 768px) {
+  #sliderContainer {
+    bottom: 15px;
+    left: 15px;
+  }
+
+  #gradientSpeedSliderContainer {
+    bottom: 70px;
+    left: 15px;
+  }
+
+  #toggleButton {
+    bottom: 120px;
+    left: 15px;
+    font-size: 19px;
+    padding: 9px 14px;
+  }
+
+  #speedSlider,
+  #gradientSpeedSlider {
+    width: 45px;
+  }
+}
+
+@media (max-width: 1024px) {
+  #sliderContainer {
+    bottom: 20px;
+    left: 20px;
+  }
+
+  #gradientSpeedSliderContainer {
+    bottom: 80px;
+    left: 20px;
+  }
+
+  #toggleButton {
+    bottom: 140px;
+    left: 20px;
+    font-size: 20px;
+    padding: 10px 15px;
+  }
+
+  #speedSlider,
+  #gradientSpeedSlider {
+    width: 50px;
+  }
+}
+
+@media (min-width: 1025px) {
+  #sliderContainer {
+    bottom: 20px;
+    left: 20px;
+  }
+
+  #gradientSpeedSliderContainer {
+    bottom: 80px;
+    left: 20px;
+  }
+
+  #toggleButton {
+    bottom: 140px;
+    left: 20px;
+    font-size: 20px;
+    padding: 10px 15px;
+  }
+
+  #speedSlider,
+  #gradientSpeedSlider {
+    width: 50px;
+  }
+}
